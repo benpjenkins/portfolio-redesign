@@ -1,10 +1,9 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { isMobile } from "react-device-detect";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { useMobileCheck } from "../hooks/useMobileCheck";
+import { Header } from './Header';
+import Footer from './Footer';
+import { useMobileCheck } from '../hooks/useMobileCheck';
 
 const Layout = ({ children }) => {
   const isMobile = useMobileCheck();
@@ -18,15 +17,16 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const childrenWithProps = React.Children.map(children, (child) =>
-    React.cloneElement(child, { isMobile })
-  );
+  const childrenWithProps = React.Children.map(children, (child) => {
+    React.cloneElement(child, { isMobile });
+  });
 
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <>
-      <Header isMobile />
+      <Header isMobile={isMobile} />
       {childrenWithProps}
-      <Footer isMobile />
+      <Footer isMobile={isMobile} />
     </>
   );
 };
