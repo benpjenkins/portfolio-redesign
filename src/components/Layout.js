@@ -1,17 +1,13 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { isMobile } from "react-device-detect";
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import { Header } from "./Header"
-import { Footer } from "./Footer"
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { useMobileCheck } from "../hooks/useMobileCheck";
 
 const Layout = ({ children }) => {
+  const isMobile = useMobileCheck();
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,15 +16,19 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
+
+  const childrenWithProps = React.Children.map(children, (child) =>
+    React.cloneElement(child, { isMobile })
+  );
 
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <Header isMobile />
+      {childrenWithProps}
+      <Footer isMobile />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
