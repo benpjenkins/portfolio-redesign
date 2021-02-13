@@ -47,10 +47,5 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.0.9",
     "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
