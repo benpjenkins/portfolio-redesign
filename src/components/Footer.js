@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer>
-      <div>
+      <div className="flex flex-row items-center justify-center">
         <a href="https://github.com/benpjenkins">
           <FaGithub size="2em" />
         </a>

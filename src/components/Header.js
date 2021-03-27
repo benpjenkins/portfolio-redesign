@@ -1,36 +1,32 @@
-import React from "react";
-import { HamburgerMenu } from "./HamburgerMenu";
+import React from 'react';
 
-export const Header = ({ isMobile }) => {
-  const links = [
-    {
-      name: "Home",
-      url: "/",
-    },
-    {
-      name: "Portfolio",
-      url: "portfolio",
-    },
-    {
-      name: "About",
-      url: "/about",
-    },
-    {
-      name: "Blog",
-      url: "/blog",
-    },
-    {
-      name: "Contact",
-      url: "/contact",
-    },
-  ];
+const links = [
+  {
+    name: 'Home',
+    url: '/',
+  },
+  {
+    name: 'Portfolio',
+    url: 'portfolio',
+  },
+  {
+    name: 'About',
+    url: '/about',
+  },
+  {
+    name: 'Blog',
+    url: '/blog',
+  },
+  {
+    name: 'Contact',
+    url: '/contact',
+  },
+];
 
-  if (isMobile) {
-    return <HamburgerMenu />;
-  }
-  return (
-    <div>
-      <h1>Header</h1>
-    </div>
-  );
-};
+const Header = () => (
+  <div>
+    <h1>Header</h1>
+  </div>
+);
+
+export default Header;
