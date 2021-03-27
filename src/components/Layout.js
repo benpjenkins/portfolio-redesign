@@ -17,16 +17,15 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const childrenWithProps = React.Children.map(children, (child) => {
-    React.cloneElement(child, { isMobile });
-  });
+  // const childrenWithProps = React.Children.map(children, (child) => {
+  //   React.cloneElement(child, { isMobile });
+  // });
 
   return (
-    // eslint-disable-next-line react/jsx-filename-extension
     <>
-      <Header isMobile={isMobile} />
-      {childrenWithProps}
-      <Footer isMobile={isMobile} />
+      <Header />
+      {children}
+      <Footer />
     </>
   );
 };

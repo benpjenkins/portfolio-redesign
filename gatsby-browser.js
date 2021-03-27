@@ -1,2 +1,1 @@
-import { wrapPageElement as wrap } from "./src/utils/wrapPageElement"
-export const wrapPageElement = wrap
+import './src/style/index.css';

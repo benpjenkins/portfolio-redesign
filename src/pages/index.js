@@ -1,9 +1,5 @@
-import * as React from "react";
-import { Button } from "@chakra-ui/react";
+import * as React from 'react';
 
-const IndexPage = ({ isMobile }) => {
-  console.log("isMobile", isMobile);
-  return <main>Index</main>;
-};
+const IndexPage = () => <main>Index</main>;
 
 export default IndexPage;
