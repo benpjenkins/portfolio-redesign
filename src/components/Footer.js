@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer>
-      <div className="flex flex-row items-center justify-center">
+    <footer className="w-1/3 m-auto">
+      <div className="flex flex-row items-center justify-between">
         <a href="https://github.com/benpjenkins">
           <FaGithub size="2em" />
         </a>
@@ -16,7 +16,7 @@ const Footer = () => {
           <FaTwitter size="2em" />
         </a>
       </div>
-      <div> ©{year}</div>
+      <div className="flex justify-center"> ©{year}</div>
     </footer>
   );
 };
